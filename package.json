@@ -1,0 +1,105 @@
+{
+  "name": "@codecaine/utils-library",
+  "version": "1.0.0",
+  "description": "A comprehensive TypeScript utility library with 250+ functions across 7 categories",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./string": {
+      "import": "./dist/stringUtils.js",
+      "types": "./dist/stringUtils.d.ts"
+    },
+    "./math": {
+      "import": "./dist/mathUtils.js",
+      "types": "./dist/mathUtils.d.ts"
+    },
+    "./array": {
+      "import": "./dist/arrayUtils.js",
+      "types": "./dist/arrayUtils.d.ts"
+    },
+    "./object": {
+      "import": "./dist/objectUtils.js",
+      "types": "./dist/objectUtils.d.ts"
+    },
+    "./date": {
+      "import": "./dist/dateUtils.js",
+      "types": "./dist/dateUtils.d.ts"
+    },
+    "./functional": {
+      "import": "./dist/functionalUtils.js",
+      "types": "./dist/functionalUtils.d.ts"
+    },
+    "./validation": {
+      "import": "./dist/validationUtils.js",
+      "types": "./dist/validationUtils.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun run build:clean && bun run build:tsc",
+    "build:clean": "rm -rf dist",
+    "build:tsc": "tsc",
+    "dev": "bun run --watch demo.ts",
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:coverage": "bun test --coverage",
+    "lint": "eslint utils/**/*.ts index.ts demo.ts",
+    "lint:fix": "eslint utils/**/*.ts index.ts demo.ts --fix",
+    "format": "prettier --write utils/**/*.ts index.ts demo.ts",
+    "format:check": "prettier --check utils/**/*.ts index.ts demo.ts",
+    "typecheck": "tsc --noEmit",
+    "validate": "bun run typecheck && bun run lint && bun run test",
+    "prepublishOnly": "bun run validate && bun run build",
+    "demo": "bun run demo.ts"
+  },
+  "keywords": [
+    "utility",
+    "utils",
+    "typescript",
+    "string",
+    "math",
+    "array",
+    "object",
+    "date",
+    "functional",
+    "validation",
+    "bun"
+  ],
+  "author": "codecaine",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecaine/utils-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codecaine/utils-library/issues"
+  },
+  "homepage": "https://github.com/codecaine/utils-library#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "prettier": "^3.6.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

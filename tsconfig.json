@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    // Output configuration
+    "outDir": "./dist",
+    "rootDir": "./",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    
+    // Environment setup & latest features
+    "lib": ["ESNext"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    // Module resolution
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": false
+  },
+  "include": [
+    "utils/**/*",
+    "index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "demo.ts"
+  ]
+}
